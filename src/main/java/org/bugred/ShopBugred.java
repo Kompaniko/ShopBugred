@@ -4,6 +4,7 @@ import io.restassured.path.json.JsonPath;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.junit.Test;
 
 import java.io.File;
 
@@ -76,7 +77,7 @@ public class ShopBugred extends  keyClass{
         given()
                 .header("Content-type", "application/json")
                 .body(json)
-                .post(baseURI)
+                .get(baseURI)
                 .then()
                 .statusCode(200)
                 .log().body();
